@@ -29,7 +29,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
     // it'll get a pile of addresses with newer timestamps.
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
-    const int64_t nOneWeek = 7 * 24 * 60 * 60;
+    const int64_t nOneWeek = 7 * 24 * 30 * 30;
     for (unsigned int i = 0; i < count; i++) {
         struct in6_addr ip;
         memcpy(&ip, data[i].addr, sizeof(ip));
@@ -267,8 +267,8 @@ public:
         pchMessageStart[3] = 0xac;
         nSubsidyHalvingInterval = 150;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Agon: 1 day
-        nTargetSpacing = 1 * 60;        // Agon: 1 minutes
+        nTargetTimespan = 24 * 30 * 30; // Agon: 1 day
+        nTargetSpacing = 1 * 30;        // Agon: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1454124731;
         genesis.nBits = 0x207fffff;
