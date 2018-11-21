@@ -1,0 +1,26 @@
+# /etc/conf.d/agond: config file for /etc/init.d/agond
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/agon/agon.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/agond"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/agond.pid"
+
+# Where to write agond data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/agond"
+
+# User and group to own agond process
+#BITCOIND_USER="agon"
+#BITCOIND_GROUP="agon"
+
+# Path to agond executable
+#BITCOIND_BIN="/usr/bin/agond"
+
+# Nice value to run agond under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

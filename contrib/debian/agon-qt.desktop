@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Agon
+Comment=Agon P2P Cryptocurrency
+Comment[fr]=Agon, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Agon, eşten eşe kriptografik sanal para birimi
+Exec=agon-qt %u
+Terminal=false
+Type=Application
+Icon=agon128
+MimeType=x-scheme-handler/agon;
+Categories=Office;Finance;

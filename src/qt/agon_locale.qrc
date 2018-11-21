@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/agon_bg.qm</file>
+        <file alias="ca">locale/agon_ca.qm</file>
+        <file alias="cs">locale/agon_cs.qm</file>
+        <file alias="da">locale/agon_da.qm</file>
+        <file alias="de">locale/agon_de.qm</file>
+        <file alias="en">locale/agon_en.qm</file>
+        <file alias="en_US">locale/agon_en_US.qm</file>
+        <file alias="es">locale/agon_es.qm</file>
+        <file alias="fi">locale/agon_fi.qm</file>
+        <file alias="fr_FR">locale/agon_fr_FR.qm</file>
+        <file alias="hr">locale/agon_hr.qm</file>
+        <file alias="it">locale/agon_it.qm</file>
+        <file alias="ja">locale/agon_ja.qm</file>
+        <file alias="ko_KR">locale/agon_ko_KR.qm</file>
+        <file alias="nl">locale/agon_nl.qm</file>
+        <file alias="pl">locale/agon_pl.qm</file>
+        <file alias="pt">locale/agon_pt.qm</file>
+        <file alias="pt_BR">locale/agon_pt_BR.qm</file>
+        <file alias="ro_RO">locale/agon_ro_RO.qm</file>
+        <file alias="ru">locale/agon_ru.qm</file>
+        <file alias="sk">locale/agon_sk.qm</file>
+        <file alias="sv">locale/agon_sv.qm</file>
+        <file alias="tr">locale/agon_tr.qm</file>
+        <file alias="uk">locale/agon_uk.qm</file>
+        <file alias="zh_CN">locale/agon_zh_CN.qm</file>
+        <file alias="zh_TW">locale/agon_zh_TW.qm</file>
+    </qresource>
+</RCC>

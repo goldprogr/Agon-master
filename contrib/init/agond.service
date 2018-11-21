@@ -1,0 +1,26 @@
+[Unit]
+Description=Agon's distributed currency daemon
+After=network.target
+
+[Service]
+User=agon
+Group=agon
+
+Type=forking
+PIDFile=/var/lib/agond/agond.pid
+
+ExecStart=/usr/bin/agond -daemon -pid=/var/lib/agond/agond.pid \
+          -conf=/etc/agon/agon.conf -datadir=/var/lib/agond
+
+ExecStop=-/usr/bin/agon-cli -conf=/etc/agon/agon.conf \
+         -datadir=/var/lib/agond stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
