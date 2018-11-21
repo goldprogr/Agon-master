@@ -226,10 +226,10 @@ QT_TRANSLATE_NOOP("agon-core", ""
 QT_TRANSLATE_NOOP("agon-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("agon-core", "(9430 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("agon-core", "(9530 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("agon-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("agon-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("agon-core", "(must be 9430 for mainnet)"),
+QT_TRANSLATE_NOOP("agon-core", "(must be 9530 for mainnet)"),
 QT_TRANSLATE_NOOP("agon-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("agon-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("agon-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),

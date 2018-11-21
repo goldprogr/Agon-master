@@ -39,7 +39,7 @@ Example:
 mnbudget submit cool-project http://www.cool-project/one.json 12 100000 y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7 1200 464a0eb70ea91c94295214df48c47baa72b3876cfb658744aaf863c7b5bf1ff0
 ```
 
-Output: `a2b29778ae82e45a973a94309ffa6aa2e2388b8f95b39ab3739f0078835f0491` - This is your proposal hash, which other nodes will use to vote on it
+Output: `a2b29778ae82e45a973a95309ffa6aa2e2388b8f95b39ab3739f0078835f0491` - This is your proposal hash, which other nodes will use to vote on it
 
 Lobby for votes
 ------------------------
@@ -56,7 +56,7 @@ Output:
 ```
 {
     "Name" : "cool-project",
-    "Hash" : "a2b29778ae82e45a973a94309ffa6aa2e2388b8f95b39ab3739f0078835f0491",
+    "Hash" : "a2b29778ae82e45a973a95309ffa6aa2e2388b8f95b39ab3739f0078835f0491",
     "FeeHash" : "464a0eb70ea91c94295214df48c47baa72b3876cfb658744aaf863c7b5bf1ff0",
     "URL" : "http://www.cool-project/one.json",
     "BlockStart" : 100000,
@@ -81,7 +81,7 @@ mnbudget vote \<proposal_hash\> [yes|no]
 
 Example:
 ```
-mnbudget vote a2b29778ae82e45a973a94309ffa6aa2e2388b8f95b39ab3739f0078835f0491 yes
+mnbudget vote a2b29778ae82e45a973a95309ffa6aa2e2388b8f95b39ab3739f0078835f0491 yes
 ```
 
 Output: `Voted successfully` - Your vote has been submitted and accepted.
@@ -100,7 +100,7 @@ Output:
 ```
 {
     "cool-project" : {
-	    "Hash" : "a2b29778ae82e45a973a94309ffa6aa2e2388b8f95b39ab3739f0078835f0491",
+	    "Hash" : "a2b29778ae82e45a973a95309ffa6aa2e2388b8f95b39ab3739f0078835f0491",
 	    "FeeHash" : "464a0eb70ea91c94295214df48c47baa72b3876cfb658744aaf863c7b5bf1ff0",
 	    "URL" : "http://www.cool-project/one.json",
 	    "BlockStart" : 100000,

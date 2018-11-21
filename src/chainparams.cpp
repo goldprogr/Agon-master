@@ -134,7 +134,8 @@ public:
         assert(hashGenesisBlock == uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
         assert(genesis.hashMerkleRoot == uint256("0xa84934befc603b6dc91cd53895bf45cd056b4e7a9562067d7608b94e8704815d"));
 
-        vSeeds.push_back(CDNSSeedData("139.59.130.219", "139.59.130.219"));
+        vSeeds.push_back(CDNSSeedData("138.68.74.240", "138.68.74.240"));
+        vSeeds.push_back(CDNSSeedData("139.59.215.183", "139.59.215.183"));
 
 
     
@@ -194,7 +195,7 @@ public:
         pchMessageStart[2] = 0x6a;
         pchMessageStart[3] = 0xbb;
         vAlertPubKey = ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d");
-        nDefaultPort = 19430;
+        nDefaultPort = 19530;
         nMinerThreads = 0;
         nLastPOWBlock = 1000000;
         nMaturity = 2;

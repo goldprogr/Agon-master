@@ -54,7 +54,7 @@ static double FLAGS_compression_ratio = 0.5;
 static bool FLAGS_histogram = false;
 
 // Cache size. Default 4 MB
-static int FLAGS_cache_size = 4194304;
+static int FLAGS_cache_size = 4195304;
 
 // Page size. Default 1 KB
 static int FLAGS_page_size = 1024;
