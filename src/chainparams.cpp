@@ -29,7 +29,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
     // it'll get a pile of addresses with newer timestamps.
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
-    const int64_t nOneWeek = 7 * 24 * 30 * 30;
+    const int64_t nOneWeek = 7 * 24 * 60 * 60;
     for (unsigned int i = 0; i < count; i++) {
         struct in6_addr ip;
         memcpy(&ip, data[i].addr, sizeof(ip));
@@ -44,20 +44,18 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
-
-  
+    boost::assign::map_list_of(0, uint256("0x"));
 
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1524057891, // * UNIX timestamp of last checkpoint block
-    323011,     // * total number of transactions between genesis and last checkpoint
+    1542812644, // * UNIX timestamp of last checkpoint block
+    0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     5760        // * estimated number of transactions per day after checkpoint
 };
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x"));
+    boost::assign::map_list_of(0, uint256("0x00000e535452eadc834ce63d0288ee1aa9e82ac97cfc5acad97d9d0abe63305a"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1538383362,
@@ -91,29 +89,29 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xa1;
-        pchMessageStart[1] = 0xab;
-        pchMessageStart[2] = 0xcb;
-        pchMessageStart[3] = 0xc4;
+        pchMessageStart[0] = 0x18;
+        pchMessageStart[1] = 0x27;
+        pchMessageStart[2] = 0xdd;
+        pchMessageStart[3] = 0xdf;
         vAlertPubKey = ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d");
         nDefaultPort = 9530;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Agon starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 20; //  starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 30; // Agon: 1 minute
-        nTargetSpacing = 1 * 30;  // Agon: 1 minute
+        nTargetTimespan = 1 * 30; // 30 sec
+        nTargetSpacing = 1 * 30;  
         nMaturity = 101;
         nMaxMoneyOut = 10000000000 * COIN;
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 120;
+        nLastPOWBlock = 130;
         nModifierUpdateBlock = 1;
 
         nBlockEnforceSerialRange = 1;    //Enforce serial range starting this block
         nZerocoinStartTime = 1523891665; // Monday, April 16, 2018 5:14:25 PM GMT+02:00 DST
-        nZerocoinStartHeight = 120;
+        nZerocoinStartHeight = 259300;
 
-        const char* pszTimestamp = "Agon 30-09-2017";
+        const char* pszTimestamp = "Solaris 30-09-2017";
 
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -134,14 +132,11 @@ public:
         assert(hashGenesisBlock == uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
         assert(genesis.hashMerkleRoot == uint256("0xa84934befc603b6dc91cd53895bf45cd056b4e7a9562067d7608b94e8704815d"));
 
-        vSeeds.push_back(CDNSSeedData("138.68.74.240", "138.68.74.240"));
-        vSeeds.push_back(CDNSSeedData("139.59.215.183", "139.59.215.183"));
-
-
+       // vSeeds.push_back(CDNSSeedData("139.59.215.183", "139.59.215.183"));
     
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 34);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
@@ -165,7 +160,7 @@ public:
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
-        zerocoinModulus =  "";
+        zerocoinModulus ="";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * CENT;       //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20;      //the maximum amount of confirmations until accumulated in 19
@@ -214,20 +209,18 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("testnet-139.59.130.219", "testnet-139.59.130.219"));
-    
-    
-
+       // vSeeds.push_back(CDNSSeedData("testnet-139.59.215.183", "testnet-139.59.215.183"));
    
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 22); // Testnet agon addresses start with '9' or 'A'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19); // Testnet agon script addresses start with '8' or '9'
+
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 2); // Testnet  addresses start with '9' or 'A'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19); // Testnet script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);    // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet agon BIP32 pubkeys start with 'DRKV'
+        // Testnet Agon BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet agon BIP32 prvkeys start with 'DRKP'
+        // Testnet Agon BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet agon BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Agon BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
         fRequireRPCPassword = true;
@@ -267,8 +260,8 @@ public:
         pchMessageStart[3] = 0xcc;
         nSubsidyHalvingInterval = 150;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 30 * 30; // Agon: 1 day
-        nTargetSpacing = 1 * 30;        // Agon: 1 minutes
+        nTargetTimespan = 24 * 30 * 30; 
+        nTargetSpacing = 1 * 30;        
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1454124731;
         genesis.nBits = 0x207fffff;
@@ -302,7 +295,7 @@ public:
     {
         networkID = CBaseChainParams::UNITTEST;
         strNetworkID = "unittest";
-        nDefaultPort = 51478;
+        nDefaultPort = 18447;
         vFixedSeeds.clear(); //! Unit test mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
         fRequireRPCPassword = false;
@@ -317,10 +310,10 @@ public:
         return data;
     }
     //! Published setters to allow changing values in unit test cases
-    virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
-    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
-    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
-    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
+  //  virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
+  //  virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
+  //  virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
+  //  virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 
 static CChainParams* pCurrentParams = 0;
